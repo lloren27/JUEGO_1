@@ -22,15 +22,6 @@ Cards.prototype.comparateCards = function () {
             console.log ("el punto es para el player 2");
         }
     }
-
-
-
-    if(this.game.player1.points>this.game.player2.point){
-        
-    }else if(this.game.player2.points>this.game.player1.point){
-        
-    }
-    
 };
 
 Cards.prototype.drawCards = function () {

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>El Juego de Cartas de laLiga</title>
-  
+
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="../JUEGO_1/js/data.js"></script>
   <script src="../JUEGO_1/js/cards.js"></script>
@@ -24,7 +24,7 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
-  
+
   <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 </head>
@@ -33,26 +33,35 @@
   <div class="container">
     <div class="row start" id="start-container">
       <p class="parrafo1">EL JUEGO DE CARTAS</p>
-      <div class ="logo col-sm-12">
-          <img class="logo" src="../JUEGO_1/images/logo_cartas.png">
-          <button class="bstart">START</button>
+      <div class="logo col-sm-12">
+        <img class="logo" src="../JUEGO_1/images/logo_cartas.png">
+        <button class="bstart">START</button>
       </div>
     </div>
     <div class="row random" id="random-container">
       <h1> La habilidad a valorar este turno es</h1>
-          <div id=skill-container></div>
-          <div class="boton-container col-sm-12">
-              <button class="brandom">SIGUIENTE</button>
-          </div>
+      <div id=skill-container></div>
+      <div class="boton-container col-sm-12">
+        <button class="brandom">SIGUIENTE</button>
+      </div>
+    </div>
+    <div class="row luck" id="luck-container">
+      <h1> Sorteo de turno inicial</h1>
+      <button class="bsorteo">Sorteo</button>
+      <input class="resultChance" type="text" value=" ">
+      <div class="boton-container col-sm-12">
+        <button class="bsiguiente2">SIGUIENTE</button>
+      </div>
     </div>
     <div class="row name1" id="name1-container"></div>
     <div class="row card1" id="cards1-container"></div>
     <div class="row transicion" id="transicion-container">
-      <h1 class="playerTransition">Turno para elPlayer 2</h1>
+      <h1 class="playerTransition">Turno para el Player 2</h1>
       <button class="bsiguiente">SIGUIENTE</button>
     </div>
     <div class="row name2" id="name2-container"></div>
     <div class="row card2" id="cards2-container"></div>
+    <div class="partialResult"></div>
   </div>
 
 

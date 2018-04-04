@@ -24,8 +24,23 @@ Game.prototype.start = function () {
 	})
 	$(".brandom").click(function () {
 		$(".random").css("display", "none")
-		$(".name1").css("display", "block")
-		$(".card1").css("display", "block")
+		$(".luck").css("display","block");	
+	})
+
+	$(".bsorteo").click(function(){
+		var numal = Math.floor(Math.random() * (3 - 1)) + 1;
+        if(numal == 1){
+            $(".resultChance").val("CARA");
+        }else{
+            $(".resultChance").val("CRUZ");
+        }
+	})
+
+	$(".bsiguiente2").click(function () {
+	$(".luck").css("display","none");
+	$(".name1").css("display", "block")
+	$(".card1").css("display", "block")
+
 	})
 }
 
