@@ -2,8 +2,7 @@ function Game(data) {
 
 	this.indexCard;
 	this.randomPropierty;
-
-
+	this.shiftClick = 0;
 	this.data = data;
 
 	this.start();
@@ -58,7 +57,10 @@ Game.prototype.getRandomSkill = function () {
 Game.prototype.selectCards = function () {
 	var game = this;
 	$(".card").click(function () {
+		game.shiftClick++;
+		console.log(game.shiftClick);
 		$(".card1").css("display", "none")
+
 		$(".name1").css("display", "none")
 		$(".transicion").css("display", "block")
 
@@ -78,13 +80,23 @@ Game.prototype.selectCards = function () {
 Game.prototype.comparateCards = function () {
 
 	var battlefield = []
-	battlefield.push(this.player1.cards[this.indexCard]);
-	debugger;
-	this.indexCard = "";
-	
-	//this.indexCard="";
-	//battlefield.push(this.player2.cards[this.indexCard]);
-	
+	var game = this
+
+	function battle() {
+		
+		if (game.shiftClick == 1) {
+			battlefield.push(game.player1.cards[game.indexCard]);
+			debugger;
+			//this.indexCard = "";
+			//console.log (battlefield)
+		} else if (game.shiftClick == 2) {
+			battlefield.push(game.player2.cards[game.indexCard]);
+			//this.indexCard = "";
+			game.shiftClick = 0;
+			//	console.log (battlefield)
+		}
+	}
+
 	console.log(battlefield)
 	/*	
 		var winner1 = []
@@ -101,6 +113,9 @@ Game.prototype.comparateCards = function () {
 }
 
 Game.prototype.drawCards = function () {
+
+	//$(#random-container).html(this.randomPropierty)
+
 
 	/////////////////////////////////////personaje 1////////////////////////////////////////////////////
 
