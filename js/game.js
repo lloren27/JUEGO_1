@@ -56,8 +56,8 @@ Game.prototype.generatePlayer = function () {
 	var cartasBarajadasP1 = cartasBarajadas.slice(0, (cartasBarajadas.length) / 2);
 	var cartasBarajadasP2 = cartasBarajadas.slice(3, (cartasBarajadas.length));
 
-	this.player1 = new Player("Jose", cartasBarajadasP1);
-	this.player2 = new Player("Pepe", cartasBarajadasP2);
+	this.player1 = new Player("Player 1", cartasBarajadasP1);
+	this.player2 = new Player("Player 2", cartasBarajadasP2);
 
 }
 
