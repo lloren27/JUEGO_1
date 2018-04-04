@@ -157,18 +157,14 @@ body{
 	color:white;
 }
 .bsorteo{
-	width: 180px;  
-    height: 180px;
+	width: 100px;  
+    height: 100px;
 	border-radius: 100px;
-	text-align: center;
-    background-image: url("../images/balon.jpg");
+    background-image: url("../images/moneda2.jpg");
     background-size:cover;
-	background-position-y: 5px;
+	background-position-x: -22px;
 	margin-top: 20px;
     color: black;
-    font-size: 40px;
-    font-family: 'Bangers', cursive;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 .bsiguiente2{
 	width: 180px;  
@@ -209,5 +205,6 @@ body{
 	background-color: #1785BC;
 	opacity: 0.95;
 	color:white;
+	display:none;
 
 }

@@ -16,10 +16,10 @@ Cards.prototype.comparateCards = function () {
         //console.log(this.card2);
         if (this.card1[this.game.randomPropierty] > this.card2[this.game.randomPropierty]) {
             this.game.player1.points++;
-            console.log ("el punto es para el player 1");
+            $(".partialResult").html("El punto es para el Player 1")
         } else if (this.card2[this.game.randomPropierty] > this.card1[this.game.randomPropierty]) {
             this.game.player2.points++;
-            console.log ("el punto es para el player 2");
+            $(".partialResult").html("El punto es para el Player 2")
         }
     }
 };

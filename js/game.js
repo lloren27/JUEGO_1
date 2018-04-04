@@ -21,6 +21,7 @@ Game.prototype.start = function () {
 		game.generatePlayer();
 		game.drawCards();
 		game.turnOfSkills();
+		//game.partialResult();
 	})
 	$(".brandom").click(function () {
 		$(".random").css("display", "none")
@@ -102,44 +103,19 @@ Game.prototype.selectCards = function () {
 		$(".transicion").css("display", "none")
 		$(".card2").css("display", "block")
 		$(".name2").css("display", "block")
+		$(".partialResult").css("display","block")
 
 	})
 }
 
-/*Game.prototype.comparateCards = function () {
+/* Game.prototype.partialResult = function(){
 
-
-	var selectCard1 = this.player1.cards[this.indexCard];
-	var selectCard2 = this.player2.cards[this.indexCard];
-
-	if (this.shiftClick == 1) {
-		this.battlefield.push(selectCard1);
-		this.indexCard = "";
-		
-	} else if (this.shiftClick == 2) {
-		this.battlefield.push(selectCard2);
-		this.indexCard = "";
-		this.shiftClick = 0;
+	if(this.player1.points > this.player2.points){
+		$(".partialResult").html("El punto es para el Player 1")
+	}else if (this.player2.points > this.player1.points)  {
+		$(".partialResult").html("El punto es para el Player 2")
 	}
-
-	var winner1 = []
-	var winner2 = []
-
-	if (this.battlefield[0][this.randomPropierty] > this.battlefield[1][this.randomPropierty]){
-		winner1.push(this.battlefield[0])
-	}else if (this.battlefield[0][this.randomPropierty] > this.battlefield[1][this.randomPropierty]){
-		winner2.push(this.battlefield[1])
-	}
-	
-	if (winner1.length > winner2.length){
-		console.log ("Un punto para el player 1")
-	} else if (winner2.length > winner1.length){
-		console.log ("Un punto para el player 2")
-	}
-
-	
 }*/
-
 Game.prototype.drawCards = function () {	
 	this.cards.drawCards();
 	this.randomPropierty = this.getRandomSkill();
