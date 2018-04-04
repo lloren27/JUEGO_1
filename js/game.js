@@ -4,17 +4,27 @@ function Game(data) {
 	this.randomPropierty;
 	this.shiftClick = 0;
 	this.data = data;
+	this.battlefield = [];
 
 	this.start();
 
 }
 
 Game.prototype.start = function () {
-
-	this.blend();
-	this.generatePlayer();
-	this.drawCards();
-	this.turnOfSkills();
+var game = this;	
+	$(".btn-start").click(function () {
+		$(".start").css("display", "none")
+		$(".random").css("display", "block")
+		game.blend();
+		game.generatePlayer();
+		game.drawCards();
+		game.turnOfSkills();
+	})
+	$(".btn-random").click(function(){
+		$(".random").css("display", "none")
+		$(".name1").css("display", "block")
+		$(".card1").css("display", "block")
+	})
 }
 
 Game.prototype.turnOfSkills = function () {
@@ -51,8 +61,8 @@ Game.prototype.generatePlayer = function () {
 
 Game.prototype.getRandomSkill = function () {
 
-	this.randomPropierty = (Object.keys(this.data[0]))[Math.floor(Math.random() * (7 - 2)) + 2]
-
+	return (Object.keys(this.data[0]))[Math.floor(Math.random() * (7 - 2)) + 2]
+	
 }
 Game.prototype.selectCards = function () {
 	var game = this;
@@ -79,25 +89,20 @@ Game.prototype.selectCards = function () {
 
 Game.prototype.comparateCards = function () {
 
-	var battlefield = []
-	var game = this
-
-	function battle() {
-		
-		if (game.shiftClick == 1) {
-			battlefield.push(game.player1.cards[game.indexCard]);
-			debugger;
+		if (this.shiftClick == 1) {
+			this.battlefield.push(this.player1.cards[this.indexCard]);
+			
 			//this.indexCard = "";
 			//console.log (battlefield)
-		} else if (game.shiftClick == 2) {
-			battlefield.push(game.player2.cards[game.indexCard]);
+		} else if (this.shiftClick == 2) {
+			this.battlefield.push(this.player2.cards[this.indexCard]);
 			//this.indexCard = "";
-			game.shiftClick = 0;
+			this.shiftClick = 0;
 			//	console.log (battlefield)
-		}
+		
 	}
 
-	console.log(battlefield)
+	console.log(this.battlefield)
 	/*	
 		var winner1 = []
 		var winner2 = []
@@ -113,10 +118,6 @@ Game.prototype.comparateCards = function () {
 }
 
 Game.prototype.drawCards = function () {
-
-	//$(#random-container).html(this.randomPropierty)
-
-
 	/////////////////////////////////////personaje 1////////////////////////////////////////////////////
 
 	var html = " "
@@ -139,4 +140,8 @@ Game.prototype.drawCards = function () {
 	$("#cards2-container").html(html)
 
 	$("#name2-container").html(this.player2.name)
+	
+	this.randomPropierty = this.getRandomSkill ();
+	//$("#random-container").html(this.randomPropierty)
+	console.log(this.randomPropierty)
 }
