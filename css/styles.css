@@ -11,7 +11,9 @@
 	margin-bottom: 20px;
 	margin-left: 0px;
 	margin-right: 0px;
-	background-color: #22AD4E;
+	background-color: #1785BC;
+	opacity: 0.8;
+	color:white;
 	
 
 }
@@ -24,9 +26,73 @@
 	text-align: center;
 	font-size:50px;
 	display:none;
+	border: 5px groove white;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: #1785BC;
+	opacity: 0.8;
+	color:white;
+	
 }
 .card2{
 	text-align: center;
 	display:none;
 	
+}
+.btn-start{
+    width: 180px;  
+    height: 180px;
+    border-radius: 100px;
+    background-image: url("../images/balon.jpg");
+    background-size:cover;
+    background-position-y: 5px;
+    color: black;
+    font-size: 70px;
+    display: block;
+    position: relative;
+    left: 455px;
+    font-family: 'Chicle', cursive;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+.btn-ramdon{
+    width: 180px;  
+    height: 180px;
+    border-radius: 100px;
+    background-image: url("../images/balon.jpg");
+    background-size:cover;
+    background-position-y: 5px;
+    color: black;
+    font-size: 70px;
+    display: block;
+    position: relative;
+    left: 455px;
+    font-family: 'Chicle', cursive;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+body{
+	background-image: url("../images/Wembly-Stadium_T1.jpg");
+	background-size:cover;
+	width: 100%;
+}
+.btn-siguiente{
+    width: 150px;  
+    height: 100px;
+    border-radius: 200px;
+    color: black;
+    font-size: 70px;
+    display: block;
+    position: relative;
+    left: 20px;
+    font-family: 'Chicle', cursive;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	opacity: 0.9;
+}
+.transicion{
+	display:none;
+	font-family: 'Fugaz One', cursive;
+	text-align: center;
+	font-size:50px;
+	color:white;
+	margin-top:40px;
 }
