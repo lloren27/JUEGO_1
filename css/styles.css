@@ -1,8 +1,12 @@
+
 body{
 	background-image: url("../images/fondoironhack.png");
 	background-position: center;
 	background-position-y: 50px;
 	background-repeat: no-repeat;
+	background-size: cover;
+	
+	
 	
 }
 .name1{
@@ -154,6 +158,8 @@ body{
 	border:1px solid white;
 	border-radius: 50px;
 	text-shadow: -1px 0 #1785BC, 0 1px #1785BC, 1px 0 #1785BC, 0 -1px #1785BC;
+	display: inline-block;
+    padding: 0 50px;
 }
 .playerTransition{
 	font-family: 'Fugaz One', cursive;
@@ -238,12 +244,12 @@ body{
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	display:none;
 	position: relative;
-	left: 450px;
+	left: 380px;
 }
 .final{
 	font-family: 'Fugaz One', cursive;
 	text-align: center;
-	font-size:30px;
+	font-size:100px;
 	border: 5px groove white;
 	border-radius: 50px;
 	margin-bottom: 20px;
@@ -253,33 +259,11 @@ body{
 	opacity: 0.95;
 	color:white;
 	display:none;
-	height: 200px;
+	height: 260px;
+	width: 900px;
+	position: relative;
+	top:300px;
+	left:40px;
 
 }
-.card {
-	position: relative;
-	width: 320px;
-	height: 420px;
-	margin: auto;
-	background-size: cover;
-	background-position: center;
-	border-radius: 30px;
-  }
-  .card:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 2;
-	background-image: inherit;
-	background-size: cover;
-	background-position: center;
-	-webkit-filter: blur(40px);
-			filter: blur(40px);
-	border-radius: 25px;
-	opacity: 0.6;
-	-webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-	transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
+

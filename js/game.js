@@ -182,6 +182,10 @@ Game.prototype.nextRound = function () {
 }
 Game.prototype.finishGame = function (){
 
-	$(".final").html("PLAYER1: " + "--------- " + this.player1.points +"////////"+ "PLAYER2: "+"------- "+ this.player2.points );
-
+	if (this.player1.points > this.player2.points){
+		$(".final").html("EL GANADOR ES EL PLAYER 1" );
+	}else if (this.player2.points > this.player1.points){
+		$(".final").html("EL GANADOR ES EL PLAYER 2" );
+	}
+	
 }
