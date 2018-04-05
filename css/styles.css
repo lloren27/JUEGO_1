@@ -1,14 +1,8 @@
 body{
-	background-image: url("../images/Wembly-Stadium_T1.jpg");
-	background-size:cover;
+	background-image: url("../images/fondoironhack.png");
+	background-position: center;
+	background-position-y: 50px;
 	background-repeat: no-repeat;
-	
-}
-.container{
-	background-image: url("../images/logo.jpg");
-	background-size: cover;
-	width:100%;
-	opacity: 0.95;
 	
 }
 .name1{
@@ -27,8 +21,10 @@ body{
 }
 .card1{
 	text-align: center;
-	size:50px;
 	display:none;
+	margin-top: 150px;
+	
+	
 }
 .name2{
 	font-family: 'Fugaz One', cursive;
@@ -48,6 +44,7 @@ body{
 .card2{
 	text-align: center;
 	display:none;
+	margin-top: 150px;
 }
 .boton-container{
 	text-align: center;
@@ -84,16 +81,16 @@ body{
 	font-family: 'Fugaz One', cursive;
 	text-align: center;
 	font-size:50px;
-	color:white;
+	color:#2B9818;;
 	margin-top:40px;
 }
 .start{
 
 	font-family: 'Bangers', cursive;
     font-size:100px;
-    color:white;
+    color:#2B9818;
     text-align: center;
-	text-shadow: -1px 0 #2B9818  , 0 1px #2B9818  , 1px 0 #2B9818  , 0 -1px #2B9818  ;
+	text-shadow: -1px 0 white  , 0 1px white  , 1px 0 white  , 0 -1px white  ;
 	margin-bottom: 30px;
 	margin-top:15px;
 }
@@ -104,24 +101,38 @@ body{
 	text-align: center;
 	color: white;
 	font-size:100px;
-	text-shadow: -1px 0 #2B9818  , 0 1px #2B9818  , 1px 0 #2B9818  , 0 -1px #2B9818  ;
+	text-shadow: -1px 0 white  , 0 1px white  , 1px 0 white  , 0 -1px white  ;
+}
+.hrandom{
+	font-family: 'Bangers', cursive;
+    color:#2B9818;
+    text-align: center;
+	text-shadow: -1px 0 white  , 0 1px white  , 1px 0 white  , 0 -1px white  ;
+	margin-bottom: 30px;
+	margin-top:15px;
 }
 .luck{
 	margin-top: 20px;
 	display:none;
 	font-family: 'Bangers', cursive;
 	text-align: center;
-	color: white;
+	color: #2B9818;;
 	font-size:100px;
 	text-shadow: -1px 0 #2B9818  , 0 1px #2B9818  , 1px 0 #2B9818  , 0 -1px #2B9818  ;
 }
 .logo{
-    
-	height: 350px;
-	border-radius: 80px;
-    text-align: center;
-	background-color: azure;
-	opacity: 0.98;
+	width:120px;
+	height: 100px;
+	
+	padding-right: 10px;
+}
+.carta{
+	width:90px;
+	height: 100px;
+	text-align: center;
+
+	padding-right: 10px;	
+	
 }
 .bstart{
 	width: 180px;  
@@ -142,6 +153,7 @@ body{
 	opacity: 0.95;
 	border:1px solid white;
 	border-radius: 50px;
+	text-shadow: -1px 0 #1785BC, 0 1px #1785BC, 1px 0 #1785BC, 0 -1px #1785BC;
 }
 .playerTransition{
 	font-family: 'Fugaz One', cursive;
@@ -150,11 +162,11 @@ body{
 	border: 5px groove white;
 	border-radius: 50px;
 	margin-bottom: 20px;
-	margin-left: 0px;
-	margin-right: 0px;
+	margin-top:-10px;
 	background-color: #1785BC;
 	opacity: 0.95;
 	color:white;
+
 }
 .bsorteo{
 	width: 100px;  
@@ -164,7 +176,9 @@ body{
     background-size:cover;
 	background-position-x: -22px;
 	margin-top: 20px;
-    color: black;
+	color: black;
+	position: relative;
+    top: 30px;
 }
 .bsiguiente2{
 	width: 180px;  
@@ -192,6 +206,7 @@ body{
 	background-color: #1785BC;
 	opacity: 0.95;
 	color:white;
+	width: 300px;
 }
 .partialResult{
 	font-family: 'Fugaz One', cursive;
@@ -199,7 +214,8 @@ body{
 	font-size:30px;
 	border: 5px groove white;
 	border-radius: 50px;
-	margin-top:50px;
+	margin-top:10px;
+	margin-bottom: 40px;
 	background-color: #1785BC;
 	opacity: 0.95;
 	color:white;
@@ -240,3 +256,30 @@ body{
 	height: 200px;
 
 }
+.card {
+	position: relative;
+	width: 320px;
+	height: 420px;
+	margin: auto;
+	background-size: cover;
+	background-position: center;
+	border-radius: 30px;
+  }
+  .card:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	background-image: inherit;
+	background-size: cover;
+	background-position: center;
+	-webkit-filter: blur(40px);
+			filter: blur(40px);
+	border-radius: 25px;
+	opacity: 0.6;
+	-webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
