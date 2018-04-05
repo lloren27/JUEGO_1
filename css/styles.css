@@ -196,7 +196,7 @@ body{
 .partialResult{
 	font-family: 'Fugaz One', cursive;
 	text-align: center;
-	font-size:50px;
+	font-size:30px;
 	border: 5px groove white;
 	border-radius: 50px;
 	margin-bottom: 20px;
@@ -206,5 +206,7 @@ body{
 	opacity: 0.95;
 	color:white;
 	display:none;
-
+}
+.selected{
+	display:none;
 }

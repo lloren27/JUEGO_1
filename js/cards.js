@@ -7,13 +7,14 @@ function Cards(game) {
 
 Cards.prototype.comparateCards = function () {
 
-//console.log (this.game.shiftClick);
+
     if (this.game.shiftClick == 1) {
          this.card1 = this.game.player1.cards[this.game.indexCard]
-        //console.log(this.card1);
+        
+        
     } else if (this.game.shiftClick == 2) {
          this.card2 = this.game.player2.cards[this.game.indexCard]
-        //console.log(this.card2);
+        
         if (this.card1[this.game.randomPropierty] > this.card2[this.game.randomPropierty]) {
             this.game.player1.points++;
             $(".partialResult").html("El punto es para el Player 1")
@@ -21,6 +22,8 @@ Cards.prototype.comparateCards = function () {
             this.game.player2.points++;
             $(".partialResult").html("El punto es para el Player 2")
         }
+        //this.game.totalPoints++;
+
     }
 };
 

@@ -5,6 +5,7 @@ function Game(data) {
 	this.indexCard;
 	this.randomPropierty;
 	this.shiftClick = 0;
+	//this.totalPoints = 0;
 	
 	this.battlefield = [];
 
@@ -95,7 +96,7 @@ Game.prototype.selectCards = function () {
 
 
 		game.indexCard = $(this).index();
-
+		$(this).addClass("selected");
 		
 		game.cards.comparateCards();
 	})
@@ -107,18 +108,32 @@ Game.prototype.selectCards = function () {
 
 	})
 }
-
-/* Game.prototype.partialResult = function(){
-
-	if(this.player1.points > this.player2.points){
-		$(".partialResult").html("El punto es para el Player 1")
-	}else if (this.player2.points > this.player1.points)  {
-		$(".partialResult").html("El punto es para el Player 2")
-	}
-}*/
 Game.prototype.drawCards = function () {	
 	this.cards.drawCards();
 	this.randomPropierty = this.getRandomSkill();
 	$("#skill-container").html(this.randomPropierty)
 	console.log(this.randomPropierty)
 }
+
+/*
+Game.prototype.nextRound = function(){
+
+	$(".bRonda2").click(function(){
+
+	this.drawCards()
+	this.turnOfSkills()
+
+	if (this.totalPoints >= 3){
+		this.finishGame ();
+	}
+
+	});
+	
+
+}
+Game.prototype.finishGame = function (){
+
+
+
+});
+*/
