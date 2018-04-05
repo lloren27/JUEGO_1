@@ -244,7 +244,7 @@ body{
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	display:none;
 	position: relative;
-	left: 380px;
+	left: 500px;
 }
 .final{
 	font-family: 'Fugaz One', cursive;
@@ -263,7 +263,7 @@ body{
 	width: 900px;
 	position: relative;
 	top:300px;
-	left:40px;
+	left:120px;
 
 }
 
