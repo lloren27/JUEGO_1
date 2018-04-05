@@ -183,9 +183,9 @@ Game.prototype.nextRound = function () {
 Game.prototype.finishGame = function (){
 
 	if (this.player1.points > this.player2.points){
-		$(".final").html("EL GANADOR ES EL PLAYER 1" );
+		$(".finalScore").html("EL GANADOR ES EL PLAYER 1" );
 	}else if (this.player2.points > this.player1.points){
-		$(".final").html("EL GANADOR ES EL PLAYER 2" );
+		$(".finalScore").html("EL GANADOR ES EL PLAYER 2" );
 	}
 	
 }
