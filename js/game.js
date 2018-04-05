@@ -22,7 +22,7 @@ Game.prototype.start = function () {
 		game.generatePlayer();
 		game.draw();
 		game.turnOfSkills();
-	
+
 		game.nextRound();
 
 	})
@@ -96,7 +96,7 @@ Game.prototype.selectCards = function () {
 	var game = this;
 	$(".card").click(function () {
 		game.shiftClick++;
-		//console.log(game.shiftClick);
+
 		$(".card1").css("display", "none")
 		$(".name1").css("display", "none")
 		if (game.shiftClick == 1) {
@@ -114,9 +114,9 @@ Game.prototype.selectCards = function () {
 		$(".card2").css("display", "block")
 		$(".name2").css("display", "block")
 		$(".bRonda2").css("display", "block")
-		
+
 	})
-	$(".card2").click(function(){
+	$(".card2").click(function () {
 		$(".card2").css("display", "none")
 		$(".name2").css("display", "none")
 		$(".partialResult").css("display", "block")
@@ -141,7 +141,7 @@ Game.prototype.nextRound = function () {
 
 		game.getRandomSkill();
 		game.drawRandom();
-		
+
 
 		$(".brandom").click(function () {
 			$(".luck").css("display", "none");
@@ -150,11 +150,11 @@ Game.prototype.nextRound = function () {
 
 		})
 		$(".card").click(function () {
-			
+
 			if (game.shiftClick == 1) {
-			$(".card1").css("display", "none")
-			$(".name1").css("display", "none")
-			$(".transicion").css("display", "block")
+				$(".card1").css("display", "none")
+				$(".name1").css("display", "none")
+				$(".transicion").css("display", "block")
 			}
 		});
 		$(".bsiguiente").click(function () {
@@ -167,8 +167,8 @@ Game.prototype.nextRound = function () {
 			$(".card2").css("display", "none")
 			$(".name2").css("display", "none")
 		})
-		
-		console.log (game.totalPoints);
+
+
 		if (game.totalPoints >= 3) {
 			game.finishGame();
 			$(".card2").css("display", "none")
@@ -176,16 +176,18 @@ Game.prototype.nextRound = function () {
 			$(".bRonda2").css("display", "none")
 			$(".transicion").css("display", "none")
 			$(".random").css("display", "none");
-			$(".final").css("display","block")
+			$(".final").css("display", "block")
+			$(".video").get(0).play()
+
 		}
 	});
 }
-Game.prototype.finishGame = function (){
+Game.prototype.finishGame = function () {
 
-	if (this.player1.points > this.player2.points){
-		$(".finalScore").html("EL GANADOR ES EL PLAYER 1" );
-	}else if (this.player2.points > this.player1.points){
-		$(".finalScore").html("EL GANADOR ES EL PLAYER 2" );
+	if (this.player1.points > this.player2.points) {
+		$(".finalScore").html("EL GANADOR ES EL PLAYER 1");
+	} else if (this.player2.points > this.player1.points) {
+		$(".finalScore").html("EL GANADOR ES EL PLAYER 2");
 	}
-	
+
 }

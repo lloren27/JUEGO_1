@@ -5,6 +5,6 @@ function Player (name,cards){
 	this.cards = cards;
 	this.points = 0;
 	
-	console.log (this)
+	
 }
 
