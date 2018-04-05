@@ -10,20 +10,19 @@ Cards.prototype.comparateCards = function () {
 
     if (this.game.shiftClick == 1) {
          this.card1 = this.game.player1.cards[this.game.indexCard]
-        
-        
     } else if (this.game.shiftClick == 2) {
-         this.card2 = this.game.player2.cards[this.game.indexCard]
-        
+        this.card2 = this.game.player2.cards[this.game.indexCard]
+        this.game.shiftClick=0;
+        //console.log (this.game.shiftClick)
         if (this.card1[this.game.randomPropierty] > this.card2[this.game.randomPropierty]) {
             this.game.player1.points++;
             $(".partialResult").html("El punto es para el Player 1")
         } else if (this.card2[this.game.randomPropierty] > this.card1[this.game.randomPropierty]) {
             this.game.player2.points++;
-            $(".partialResult").html("El punto es para el Player 2")
+           $(".partialResult").html("El punto es para el Player 2")
         }
-        //this.game.totalPoints++;
-
+        this.game.totalPoints++;
+        console.log (this.game.totalPoints);
     }
 };
 
@@ -50,5 +49,7 @@ Cards.prototype.drawCards = function () {
     $("#cards2-container").html(html)
 
     $("#name2-container").html(this.game.player2.name)
+
+    $(".selected").css("display","none")
 }
 

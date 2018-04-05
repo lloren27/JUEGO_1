@@ -1,12 +1,12 @@
 function Game(data) {
-	
+
 	this.data = data;
 	this.cards = new Cards(this)
 	this.indexCard;
 	this.randomPropierty;
 	this.shiftClick = 0;
-	//this.totalPoints = 0;
-	
+	this.totalPoints = 0;
+
 	this.battlefield = [];
 
 	this.start();
@@ -20,28 +20,30 @@ Game.prototype.start = function () {
 		$(".random").css("display", "block")
 		game.blend();
 		game.generatePlayer();
-		game.drawCards();
+		game.draw();
 		game.turnOfSkills();
-		//game.partialResult();
+	
+		game.nextRound();
+
 	})
 	$(".brandom").click(function () {
 		$(".random").css("display", "none")
-		$(".luck").css("display","block");	
+		$(".luck").css("display", "block");
 	})
 
-	$(".bsorteo").click(function(){
+	$(".bsorteo").click(function () {
 		var numal = Math.floor(Math.random() * (3 - 1)) + 1;
-        if(numal == 1){
-            $(".resultChance").val("CARA");
-        }else{
-            $(".resultChance").val("CRUZ");
-        }
+		if (numal == 1) {
+			$(".resultChance").val("CARA");
+		} else {
+			$(".resultChance").val("CRUZ");
+		}
 	})
 
 	$(".bsiguiente2").click(function () {
-	$(".luck").css("display","none");
-	$(".name1").css("display", "block")
-	$(".card1").css("display", "block")
+		$(".luck").css("display", "none");
+		$(".name1").css("display", "block")
+		$(".card1").css("display", "block")
 
 	})
 }
@@ -82,6 +84,13 @@ Game.prototype.getRandomSkill = function () {
 
 	return (Object.keys(this.data[0]))[Math.floor(Math.random() * (7 - 2)) + 2]
 
+
+
+}
+Game.prototype.drawRandom = function () {
+
+	this.randomPropierty = this.getRandomSkill();
+	$("#skill-container").html(this.randomPropierty)
 }
 Game.prototype.selectCards = function () {
 	var game = this;
@@ -97,43 +106,82 @@ Game.prototype.selectCards = function () {
 
 		game.indexCard = $(this).index();
 		$(this).addClass("selected");
-		
+
 		game.cards.comparateCards();
 	})
 	$(".bsiguiente").click(function () {
 		$(".transicion").css("display", "none")
 		$(".card2").css("display", "block")
 		$(".name2").css("display", "block")
-		$(".partialResult").css("display","block")
-
+		$(".bRonda2").css("display", "block")
+		
+	})
+	$(".card2").click(function(){
+		$(".card2").css("display", "none")
+		$(".name2").css("display", "none")
+		$(".partialResult").css("display", "block")
 	})
 }
-Game.prototype.drawCards = function () {	
+Game.prototype.draw = function () {
+
+	this.drawRandom();
 	this.cards.drawCards();
-	this.randomPropierty = this.getRandomSkill();
-	$("#skill-container").html(this.randomPropierty)
-	console.log(this.randomPropierty)
+
 }
 
-/*
-Game.prototype.nextRound = function(){
+Game.prototype.nextRound = function () {
+	var game = this
 
-	$(".bRonda2").click(function(){
+	$(".bRonda2").click(function () {
+		$(".card2").css("display", "none")
+		$(".name2").css("display", "none")
+		$(".bRonda2").css("display", "none")
+		$(".partialResult").css("display", "none")
+		$(".random").css("display", "block");
 
-	this.drawCards()
-	this.turnOfSkills()
+		game.getRandomSkill();
+		game.drawRandom();
+		
 
-	if (this.totalPoints >= 3){
-		this.finishGame ();
-	}
+		$(".brandom").click(function () {
+			$(".luck").css("display", "none");
+			$(".name1").css("display", "block")
+			$(".card1").css("display", "block")
 
+		})
+		$(".card").click(function () {
+			
+			if (game.shiftClick == 1) {
+			$(".card1").css("display", "none")
+			$(".name1").css("display", "none")
+			$(".transicion").css("display", "block")
+			}
+		});
+		$(".bsiguiente").click(function () {
+			$(".transicion").css("display", "none")
+			$(".card2").css("display", "block")
+			$(".name2").css("display", "block")
+			$(".bRonda2").css("display", "block")
+		})
+		$(".card").click(function () {
+			$(".card2").css("display", "none")
+			$(".name2").css("display", "none")
+		})
+		
+		console.log (game.totalPoints);
+		if (game.totalPoints >= 3) {
+			game.finishGame();
+			$(".card2").css("display", "none")
+			$(".name2").css("display", "none")
+			$(".bRonda2").css("display", "none")
+			$(".transicion").css("display", "none")
+			$(".random").css("display", "none");
+			$(".final").css("display","block")
+		}
 	});
-	
-
 }
 Game.prototype.finishGame = function (){
 
+	$(".final").html("PLAYER1: " + "--------- " + this.player1.points +"////////"+ "PLAYER2: "+"------- "+ this.player2.points );
 
-
-});
-*/
+}
